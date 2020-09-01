@@ -58,6 +58,7 @@
 | -------           | ----------       | ------------------------------ |
 | post_code         | string           | null: false                    |
 | item_purchases_id | integer          | null: false, foreign_key: true |
+| area_id           | integer          | null: false                    |
 | city              | string           | null: false                    |
 | address           | string           | null: false                    |
 | building_name     | string           |                                |
@@ -65,4 +66,4 @@
 
 ### Association
 
-- belongs_to :buy
+- belongs_to :item_purchase
