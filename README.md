@@ -20,18 +20,17 @@
 | Column              | Type            | Options                        |
 | ------              | ------          | -----------                    |
 | user                | references      | null: false, foreign_key: true |
-| images              | integer         | null: false                    |
 | description         | text            | null: false                    |
-| category            | integer         | null: false                    |
-| condition           | integer         | null: false                    |
-| shipping_charges    | integer         | null: false                    |
-| area                | integer         | null: false                    |
-| shipping_days       | integer         | null: false                    |
+| category_id         | integer         | null: false                    |
+| condition_id        | integer         | null: false                    |
+| shipping_charges_id | integer         | null: false                    |
+| area_id             | integer         | null: false                    |
+| shipping_days_id    | integer         | null: false                    |
 | price               | integer         | null: false                    |
 
 
 ### Association
-
+- belongs_to_active_hash :genre
 - has_one :item_purchase
 
 ## item_purchases テーブル
