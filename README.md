@@ -7,16 +7,21 @@
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
 | name     | string | null: false |
+| name_kana| string | null: false |
 | email    | string | null: false |
 | password | string | null: false |
+| nickname | string | null: false |
+| birthday | string | null: false |
 
 ## items テーブル
 
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| name   | string | null: false |
-| image  | references | null: false |
-| text   | string | null:false  |
+| Column   | Type       | Options     |
+| ------   | ------     | ----------- |
+| name     | string     | null: false |
+| email    | string     | null: false |
+| password | string     | null: false |
+| image    | string     | null: false |
+| text     | string     | null:false  |
 
 ### Association
 
@@ -38,6 +43,9 @@
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
+| name    | string     | null: false                    |
+| email   | string     | null: false                    |
+| password| string     | null: false                    |
 | content | string     |                                |
 | user    | references | null: false, foreign_key: true |
 | item    | references | null: false, foreign_key: true |
