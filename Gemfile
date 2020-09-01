@@ -58,8 +58,6 @@ group :production do
   gem 'rails_12factor'
 end
 
-<<<<<<< Updated upstream
+
 gem 'devise'
-=======
-gem 'devise'
->>>>>>> Stashed changes
+
