@@ -15,11 +15,17 @@
 | password        | string | null: false |
 | birth_date      | date   | null: false |
 
+### Association
+
+- has_many :items
+- has_many :items_purchases
+
 ## items テーブル
 
 | Column              | Type            | Options                        |
 | ------              | ------          | -----------                    |
 | user                | references      | null: false, foreign_key: true |
+| item_name           | text            | null: false
 | description         | text            | null: false                    |
 | category_id         | integer         | null: false                    |
 | condition_id        | integer         | null: false                    |
@@ -39,11 +45,10 @@
 | ------          | ----------       | ------------------------------ |
 | user            | references       | null: false, foreign_key: true |
 | item            | references       | null: false, foreign_key: true |
-| address         | references       | null: false, foreign_key: true |
-
 
 ### Association
 
+- belongs_to :user
 - belongs_to :item
 - has_one :address
 
@@ -54,6 +59,7 @@
 | post_code         | string           | null: false                    |
 | item_purchases_id | integer          | null: false, foreign_key: true |
 | city              | string           | null: false                    |
+| address           | string           | null: false                    |
 | building_name     | string           | null: false                    |
 | phone_number      | string           | null: false                    |
 
