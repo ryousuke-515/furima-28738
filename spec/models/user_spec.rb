@@ -7,7 +7,6 @@ RSpec.describe User, type: :model do
     end
 
     it 'nickname、first_name、last_name、first_name_kana、last_name_kana、email、password、password_confimation、birth_dateが存在すれば登録できること' do
-      # binding.pry
       expect(@user).to be_valid
       
     end
