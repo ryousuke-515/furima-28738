@@ -1,16 +1,18 @@
 class Item < ApplicationRecord
-  belongs_to_active_hash :genre
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :category
   has_one :item_purchase
 
 
   with_options presence: true do
     validates :name
     validates :description
-    validates :category_id
+    validates :genre_id, numericality: { other_than: 1 } 
     validates :condition_id
     validates :shipping_charges_id
     validates :area_id
     validates :shiiing_days_id
     validates :price
+    
   end
 end
