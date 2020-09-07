@@ -9,15 +9,17 @@ class Item < ApplicationRecord
   has_one :item_purchase
 
 
+
+
   with_options presence: true do
     validates :name
     validates :description
-    validates :genre_id, numericality: { other_than: 1 } 
-    validates :genre_id, numericality: { other_than: 1 }
+    validates :category_id, numericality: { other_than: 1 } 
+    validates :condition_id, numericality: { other_than: 1 }
     validates :shipping_charges_id, numericality: { other_than: 1 }
     validates :area_id, numericality: { other_than: 1 }
-    validates :shiiing_days_id, numericality: { other_than: 1 }
-    validates :price
+    validates :shipping_days_id, numericality: { other_than: 1 }
+    validates :price, numericality: { greater_than: 300, less_than: 9_999_999 },format: { with: /\A[0-9]+\z/, message: "is invalid. Input half-width nimber."}
     
   end
 end
