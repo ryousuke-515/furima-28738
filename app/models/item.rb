@@ -13,6 +13,7 @@ class Item < ApplicationRecord
 
 
   with_options presence: true do
+    validates :active_storage_blobs
     validates :name
     validates :description
     validates :category_id, numericality: { other_than: 1 } 
