@@ -1,15 +1,3 @@
-// 1 イベントを記述
-// →window load
-// function profit(){
-//   const price = document.getElementById("item-price");
-//   console.log(price)
-// }
-// 2 I'dを取得して定数に代入
-
-// 3 金額を入力したときのイベント
-
-// ４計算式
-// →表示させる
 function sale() {
   const price = document.getElementById("item-price")
   const fee = document.getElementById("add-tax-price")
@@ -26,4 +14,3 @@ function sale() {
   })
 }
 window.addEventListener('load', sale)
-// window.addEventListener("load", profit);
