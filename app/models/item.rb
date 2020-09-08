@@ -5,7 +5,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_charge
   belongs_to_active_hash :area
   belongs_to_active_hash :shipping_day
-  has_one_attached :active_storage_blobs
+  has_one_attached :image
 
   has_one :item_purchase
 
@@ -13,7 +13,7 @@ class Item < ApplicationRecord
 
 
   with_options presence: true do
-    validates :active_storage_blobs
+    validates :image
     validates :name
     validates :description
     validates :category_id, numericality: { other_than: 1 } 
