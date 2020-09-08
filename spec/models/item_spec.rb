@@ -35,10 +35,22 @@ RSpec.describe Item, type: :model do
       expect(@item.errors.full_messages).to include("Category can't be blank")
     end
 
+    it 'カテゴリーの情報がデフォルトの場合だと保存できないこと' do
+      @item.category_id = "--"
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Category is not a number")
+    end
+
     it '商品の状態についての情報が無ければ保存できないこと' do
       @item.condition_id = nil
       @item.valid?
       expect(@item.errors.full_messages).to include("Condition can't be blank")
+    end
+
+    it '商品の状態についての情報がデフォルトの場合だと保存できないこと' do
+      @item.condition_id = "--"
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Condition is not a number")
     end
 
     it '配送料負担についての記述が無ければ保存できないこと' do
@@ -47,16 +59,34 @@ RSpec.describe Item, type: :model do
       expect(@item.errors.full_messages).to include("Shipping charges can't be blank")
     end
 
+    it '配送料負担についての情報がデフォルトの場合だと保存できないこと' do
+      @item.shipping_charges_id = "--"
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Shipping charges is not a number")
+    end
+
     it '発送元の地域の情報が無ければ保存できないこと' do
       @item.area_id = nil
       @item.valid?
       expect(@item.errors.full_messages).to include("Area can't be blank")
     end
 
+    it '発送元の地域についての情報がデフォルトの場合だと保存できないこと' do
+      @item.area_id = "--"
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Area is not a number")
+    end
+
     it '発送までの日数についての情報が無ければ保存できないこと' do
       @item.shipping_days_id = nil
       @item.valid?
       expect(@item.errors.full_messages).to include("Shipping days can't be blank")
+    end
+
+    it '発送までの日数についての情報がデフォルトの場合だと保存できないこと' do
+      @item.shipping_days_id = "--"
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Shipping days is not a number")
     end
 
     it '価格についての情報が無ければ保存できないこと' do
