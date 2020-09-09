@@ -16,8 +16,7 @@ class ItemsController < ApplicationController
     end
   end
 
-  def 
-    
+  def show
   end
 
   private
