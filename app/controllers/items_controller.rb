@@ -24,12 +24,11 @@ class ItemsController < ApplicationController
   end
 
   def update
-   if @item.update(item_params)
-    redirect_to item_path(@item.id)
-   else
-     render :edit
-   end 
- 
+    if @item.update(item_params)
+      redirect_to item_path(@item.id)
+    else
+      render :edit
+    end
   end
 
   private
