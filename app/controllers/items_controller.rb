@@ -35,6 +35,8 @@ class ItemsController < ApplicationController
     if item = Item.find(params[:id])
       item.destroy
       redirect_to root_path
+    else
+      render :show
     end
   end
 
