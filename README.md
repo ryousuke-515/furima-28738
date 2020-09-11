@@ -18,14 +18,14 @@
 ### Association
 
 - has_many :items
-- has_many :orders
+- has_many :item_purchases
 
 ## items テーブル
 
 | Column              | Type            | Options                        |
 | ------              | ------          | -----------                    |
 | user                | references      | null: false, foreign_key: true |
-| name                | string          | null: false
+| name                | string          | null: false                    |
 | description         | text            | null: false                    |
 | category_id         | integer         | null: false                    |
 | condition_id        | integer         | null: false                    |
@@ -37,9 +37,9 @@
 
 ### Association
 - belongs_to_active_hash :genre
-- has_one :order
+- has_one :item_purchase
 
-## orders テーブル
+## item_purchases テーブル
 
 | Column          | Type             | Options                        |
 | ------          | ----------       | ------------------------------ |
@@ -57,7 +57,7 @@
 | Column            | Type             | Options                        |
 | -------           | ----------       | ------------------------------ |
 | post_code         | string           | null: false                    |
-| order_id | integer          | null: false, foreign_key: true |
+| item_purchase_id  | integer          | null: false, foreign_key: true |
 | area_id           | integer          | null: false                    |
 | city              | string           | null: false                    |
 | address           | string           | null: false                    |
@@ -66,4 +66,4 @@
 
 ### Association
 
-- belongs_to :order
+- belongs_to :item_purchase
