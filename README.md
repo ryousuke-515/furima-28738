@@ -18,7 +18,7 @@
 ### Association
 
 - has_many :items
-- has_many :items_purchases
+- has_many :order
 
 ## items テーブル
 
@@ -37,9 +37,9 @@
 
 ### Association
 - belongs_to_active_hash :genre
-- has_one :item_purchase
+- has_one :order
 
-## item_purchases テーブル
+## orders テーブル
 
 | Column          | Type             | Options                        |
 | ------          | ----------       | ------------------------------ |
@@ -66,4 +66,4 @@
 
 ### Association
 
-- belongs_to :item_purchase
+- belongs_to :order
