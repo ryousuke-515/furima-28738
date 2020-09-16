@@ -3,6 +3,10 @@ class OrdersController < ApplicationController
     # redirect
     # formobject 
     @item = Item.find(params[:item_id])
+    @order = ItemPurchaseAddress.new
+    if @item.user_id == current_user.id
+      redirect_to root_path
+    end
   end
 
   def create
@@ -17,6 +21,7 @@ class OrdersController < ApplicationController
     end
   end
   private
+ 
 
   def order_params
     params.permit(:post_code, :item_purchase_id, :city, :area_id, :address, :building_name, :phone_number, :token, :item_id).merge(user_id: current_user.id)

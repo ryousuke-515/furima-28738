@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   def index
     
     @items = Item.all.order('created_at DESC')
+    @item_purchase = ItemPurchase.all
   end
 
   def new
