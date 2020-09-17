@@ -1,5 +1,4 @@
 class ItemPurchaseAddress
-
   include ActiveModel::Model
   attr_accessor :post_code, :item_purchase_id, :area_id, :city, :address, :building_name, :phone_number, :user_id, :item_id, :token
 
