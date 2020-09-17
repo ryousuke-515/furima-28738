@@ -34,13 +34,7 @@
     <% elsif @item.item_purchase == nil && user_signed_in? %>
     
     <%= link_to '購入画面に進む', item_orders_path(@item.id) ,class:"item-red-btn" %>
-    
-    
-   
     <% else %>
-   
-    <%= link_to '購入画面に進む', "/users/sign_in" ,class:"item-red-btn"%>
-    
  <% end %>
  
     <div class="item-explain-box">
