@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :show, :destroy]
   def index
     @items = Item.all.order('created_at DESC')
+    @item_purchase = ItemPurchase.all
   end
 
   def new
