@@ -9,6 +9,7 @@ class ItemPurchaseAddress
     validates :city, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: 'is invalid. Input full-width characters.' }
     validates :address
     validates :phone_number, format: { with: /\A\d{10,11}\z/, message: 'is sure to enter numerical values' }
+    validates :token
   end
   def save
     item_purchase = ItemPurchase.create(user_id: user_id, item_id: item_id)
